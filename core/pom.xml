@@ -43,11 +43,16 @@
     </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-core</artifactId>
+      <artifactId>hadoop-client</artifactId>
     </dependency>
     <dependency>
       <groupId>com.hadoop.gplcompression</groupId>
       <artifactId>hadoop-lzo</artifactId>
+    </dependency>
+    <!-- for tests -->
+    <dependency>
+      <groupId>ant</groupId>
+      <artifactId>ant</artifactId>
     </dependency>
   </dependencies>
 

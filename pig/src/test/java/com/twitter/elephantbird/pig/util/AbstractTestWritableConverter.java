@@ -23,6 +23,7 @@ import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.TaskAttemptID;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+import org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl;
 import org.apache.pig.ExecType;
 import org.apache.pig.PigServer;
 import org.apache.pig.backend.executionengine.ExecException;
@@ -142,7 +143,7 @@ public abstract class AbstractTestWritableConverter<W extends Writable, C extend
         new FileSplit(new Path(tempFilename), 0, new File(tempFilename).length(),
             new String[] { "localhost" });
     final TaskAttemptContext context =
-        new TaskAttemptContext(job.getConfiguration(), new TaskAttemptID());
+        new TaskAttemptContextImpl(job.getConfiguration(), new TaskAttemptID());
     reader.initialize(fileSplit, context);
     final InputSplit[] wrappedSplits = new InputSplit[] { fileSplit };
     final int inputIndex = 0;

@@ -42,5 +42,9 @@
       <groupId>org.apache.mahout</groupId>
       <artifactId>mahout-math</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.uncommons.maths</groupId>
+      <artifactId>uncommons-maths</artifactId>
+    </dependency>
   </dependencies>
 </project>

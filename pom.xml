@@ -76,10 +76,10 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j.version>1.6.4</slf4j.version>
-    <apache.hadoop.version>0.20.2</apache.hadoop.version>
-    <apache.pig.version>0.9.2</apache.pig.version>
-    <apache.hive.version>0.8.0</apache.hive.version>
-    <apache.mahout.version>0.6</apache.mahout.version>
+    <apache.hadoop.version>2.0.0-mr1-cdh4.1.0</apache.hadoop.version>
+    <apache.pig.version>0.10.0-cdh4.1.0</apache.pig.version>
+    <apache.hive.version>0.9.0-cdh4.1.0</apache.hive.version>
+    <apache.mahout.version>0.7-cdh4.1.0</apache.mahout.version>
   </properties>
 
   <repositories>
@@ -150,6 +150,13 @@
         <scope>test</scope>
       </dependency>
 
+      <dependency>
+        <groupId>ant</groupId>
+        <artifactId>ant</artifactId>
+        <version>1.6.5</version>
+        <scope>test</scope>
+      </dependency>
+
       <!-- logging -->
       <dependency>
         <groupId>org.slf4j</groupId>
@@ -207,23 +214,13 @@
       <!-- hadoop -->
       <dependency>
         <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-common</artifactId>
-        <version>${apache.hadoop.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-core</artifactId>
-        <version>${apache.hadoop.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-mapred</artifactId>
+        <artifactId>hadoop-client</artifactId>
         <version>${apache.hadoop.version}</version>
       </dependency>
       <dependency>
         <groupId>com.hadoop.gplcompression</groupId>
         <artifactId>hadoop-lzo</artifactId>
-        <version>0.4.16</version>
+        <version>0.4.15-cdh4.1.0</version>
       </dependency>
 
       <!-- cascading -->
@@ -278,7 +275,11 @@
         <artifactId>mahout-math</artifactId>
         <version>${apache.mahout.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>org.uncommons.maths</groupId>
+        <artifactId>uncommons-maths</artifactId>
+        <version>1.2.2a</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 

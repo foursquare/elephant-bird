@@ -15,6 +15,7 @@ import org.apache.hadoop.mapreduce.OutputFormat;
 import org.apache.hadoop.mapreduce.RecordWriter;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.TaskAttemptID;
+import org.apache.hadoop.mapreduce.task.TaskAttemptContextImpl;
 import org.apache.pig.ExecType;
 import org.apache.pig.PigServer;
 import org.apache.pig.data.DataByteArray;
@@ -188,12 +189,12 @@ public class TestRCFileProtobufStorage {
     });
 
     Configuration conf = new Configuration();
-    conf.setBoolean("mapred.output.compress", true);
+    //conf.setBoolean("mapred.output.compress", true);
     // for some reason GzipCodec results in loader failure on Mac OS X
     conf.set("mapred.output.compression.codec", "org.apache.hadoop.io.compress.BZip2Codec");
 
     return outputFormat.getRecordWriter(
-        new TaskAttemptContext(conf, new TaskAttemptID()));
+        new TaskAttemptContextImpl(conf, new TaskAttemptID()));
   }
 
   // return a Person object
