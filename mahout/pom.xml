@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.twitter.elephantbird</groupId>
     <artifactId>elephant-bird</artifactId>
-    <version>3.0.4</version>
+    <version>3.0.4-cdh4.1-fs1</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -41,6 +41,10 @@
     <dependency>
       <groupId>org.apache.mahout</groupId>
       <artifactId>mahout-math</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.uncommons.maths</groupId>
+      <artifactId>uncommons-maths</artifactId>
     </dependency>
   </dependencies>
 </project>

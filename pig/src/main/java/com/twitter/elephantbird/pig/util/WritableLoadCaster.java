@@ -92,6 +92,11 @@ public abstract class WritableLoadCaster<W extends Writable> implements LoadCast
     return toBag(writable = readFields(bytes, writable), schema);
   }
 
+  @Override
+  public Boolean bytesToBoolean(byte[] bytes) throws IOException {
+    return toBoolean(writable = readFields(bytes, writable));
+  }
+
   protected String toCharArray(W writable) throws IOException {
     throw new UnsupportedOperationException();
   }
@@ -109,6 +114,10 @@ public abstract class WritableLoadCaster<W extends Writable> implements LoadCast
   }
 
   protected Double toDouble(W writable) throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  protected Boolean toBoolean(W writable) throws IOException {
     throw new UnsupportedOperationException();
   }
 
