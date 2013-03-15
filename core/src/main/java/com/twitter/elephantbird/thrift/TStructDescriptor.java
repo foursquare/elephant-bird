@@ -224,15 +224,7 @@ public class TStructDescriptor {
         tStructDescriptor = null;
       }
 
-      if (field.type == TType.STRING && enclosingClass != null) {
-        // only Thrift 0.6 and above have explicit isBuffer() method.
-        // until then a partial work around that works only if
-        // the field is not inside a container.
-        isBuffer_ =
-          ThriftUtils.getFieldType(enclosingClass, fieldName) != String.class;
-      } else {
-        isBuffer_= false;
-      }
+      isBuffer_ = field.isBinary();
     }
 
     public short getFieldId() {
